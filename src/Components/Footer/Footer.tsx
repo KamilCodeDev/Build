@@ -6,7 +6,7 @@ import { FaTelegram } from "react-icons/fa";
 
 import axios from "axios"
 
-import Container from "../Container/Container"
+
 
 const Footer = () => {
     const [isLoading, setIsLoading] = useState(false);

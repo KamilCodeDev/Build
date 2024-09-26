@@ -1,12 +1,5 @@
 import style from "./Collection.module.scss";
 import Slider from "react-slick";
-import img5 from "../../assets/img5.jpg";
-import img6 from "../../assets/img6.jpg";
-import img7 from "../../assets/imh7.jpg";
-import img8 from "../../assets/img8.jpg";
-import img9 from "../../assets/img9.jpg";
-import img0 from "../../assets/img0.jpg";
-import video1 from '../../assets/video1.mp4';
 import { useCollection } from "./hook/useCollection";
 
 export default function SimpleSlider() {
@@ -17,11 +10,6 @@ export default function SimpleSlider() {
     slidesToShow: 3,
     slidesToScroll: 1,
   };
-
-  const handleVideoError = () => {
-    console.error("Ошибка загрузки видео.");
-  };
-
   const { data: collection } = useCollection();
   console.log(collection);
 

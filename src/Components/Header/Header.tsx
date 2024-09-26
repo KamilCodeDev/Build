@@ -11,7 +11,8 @@ const Header = () => {
     function calculateTimeLeft() {
         const now = new Date();
         const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1); // Первое число следующего месяца
-        const difference = nextMonth - now;
+        //@ts-ignorets-ignore
+        const difference = nextMonth - now; 
 
         const timeLeft = {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
