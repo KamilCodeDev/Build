@@ -48,13 +48,16 @@ function SimpleSlider() {
     return (
         <div>
             <div id="Seyyam">
+                
                 <div className="slider-container">
                     <Slider {...settings}>
+                        
                     {seyyam?.map((seyyam) => (
                         <div className={style.container}>
-                            
                                 <div className={style.slider}>
+                                    
                                     <div className={style.card}>
+                                        
                                         <h1>{seyyam.title}</h1>
                                         <p>{seyyam.description}</p>
                                     </div>
