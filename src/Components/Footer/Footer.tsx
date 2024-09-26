@@ -38,7 +38,7 @@ const Footer = () => {
             <div className={style.container}>
                 <div className={style.footer}>
                     <div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2997.3822632150727!2d69.21448571155857!3d41.30054700125765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0KLQsNGI0LrQtdC90YIsINCn0LjQu9Cw0L3Qt9Cw0YDRgdC60LjQuSDRgC3QvSwg0YPQuy4g0JfQsNGA0LrQtdC90YIsIDMt0L_RgNC-0LXQt9C0LCDQtC4gMjI!5e0!3m2!1sru!2s!4v1726513597615!5m2!1sru!2s" width="600" height="450" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11990.087432143182!2d69.2153541!3d41.2975096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b004c115c99%3A0x2cfd57386d564703!2sSeyyam%20Group!5e0!3m2!1sru!2s!4v1727351700025!5m2!1sru!2s" width="600" height="450" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <form className={style.form} onSubmit={handleSubmit}>
                         <div className={style.row}>

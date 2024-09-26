@@ -28,10 +28,10 @@ export default function SimpleSlider() {
 
   return (
     <div id="Collection" className={style.wrapper}>
-      <video className={style.video} autoPlay loop muted playsInline onError={handleVideoError}>
+      {/* <video className={style.video} autoPlay loop muted playsInline onError={handleVideoError}>
         <source src={video1} type="video/mp4" />
         Ваш браузер не поддерживает видео.
-      </video>
+      </video> */}
 
       <div className={style.container}>
         <h1>OUR COLLECTION</h1>
