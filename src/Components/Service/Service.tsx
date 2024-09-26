@@ -1,39 +1,30 @@
 import styles from './Service.module.scss'
-import img2 from '../../Assets/img2.webp'
+import { useService } from "./hook/useService";
+
 const Service = () => {
+    // Вызов useService должен находиться внутри компонента
+    const { data: service } = useService();
+    console.log(service);
+
     return (
-        <div>
+        <div id='Service'>
             <div className={styles.service}>
                 <h1>УСЛУГИ</h1>
                 <div className={styles.container}>
-                    <div className={styles.card}>
-                        <img className={styles.img} src={img2} alt="" />
-                        <div className={styles.text}>
-                            <h1>Планирование строительства</h1>
-                            <p>Это текст. Нажмите один раз и выберите «Редактировать текст» или просто дважды кликните, чтобы добавить свой текст и настроить шрифт.</p>
+                    {service?.map((serviceItem) => (
+                        <div key={serviceItem.id} className={styles.card}>
+                            <img className={styles.img} src={serviceItem.img} alt="" />
+                            <div className={styles.text}>
+                                <h1>{serviceItem.title}</h1>
+                                <p>{serviceItem.description}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <img className={styles.img} src={img2} alt="" />
-                        <div className={styles.text}>
-                            <h1>Планирование строительства</h1>
-                            <p>Это текст. Нажмите один раз и выберите «Редактировать текст» или просто дважды кликните, чтобы добавить свой текст и настроить шрифт.</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <img className={styles.img} src={img2} alt="" />
-                        <div className={styles.text}>
-                            <h1>Планирование строительства</h1>
-                            <p>Это текст. Нажмите один раз и выберите «Редактировать текст» или просто дважды кликните, чтобы добавить свой текст и настроить шрифт.</p>
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Service
+export default Service;
+

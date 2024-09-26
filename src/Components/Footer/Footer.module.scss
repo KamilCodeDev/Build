@@ -7,6 +7,8 @@
 .container{
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 80px;
+    
 }
 
 .form {
@@ -15,6 +17,7 @@
     display: grid;
     gap: 20px;
     font-family: 'Roboto', sans-serif;
+
 
     .row {
         display: flex;
@@ -51,3 +54,52 @@
         color: white;
     }
 }
+.logo{
+    display: flex;
+    gap: 10px;
+}
+@media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+    }
+  
+    iframe {
+      height: 200px;
+    }
+  
+    .form {
+      .row {
+        flex-direction: column;
+      }
+  
+      button {
+        width: 100%;
+      }
+    }
+  }
+  
+  /* Адаптивные стили для экранов до 480px */
+  @media (max-width: 480px) {
+    .footer {
+      iframe {
+        height: 180px;
+        width: 100%;
+      }
+  
+      .form {
+        padding: 15px;
+  
+        label {
+          font-size: 14px;
+        }
+  
+        textarea {
+          min-height: 80px;
+        }
+  
+        button {
+          padding: 8px;
+        }
+      }
+    }
+  }

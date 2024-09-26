@@ -27,3 +27,27 @@
     justify-self: center;
     padding: 12px;
 }
+@media (max-width: 1024px) {
+    .slide h1 {
+      font-size: 30px;
+    }
+  
+    .card {
+      .bg-img-hero-center {
+        min-height: 500px; /* Уменьшаем высоту изображений */
+      }
+    }
+  }
+  
+  /* Адаптивные стили для экранов до 768px */
+  @media (max-width: 768px) {
+    .slide h1 {
+      font-size: 24px;
+    }
+  
+    .card {
+      .bg-img-hero-center {
+        min-height: 300px; /* Еще меньше высота изображений */
+      }
+    }
+  }

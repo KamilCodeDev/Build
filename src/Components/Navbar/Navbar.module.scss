@@ -1,75 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&family=Unlock&display=swap');
+
+.back {
+  background-color: rgba(30, 45, 59);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 90px;
+  background-color: rgba(30, 45, 59);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  // body {
+  //   padding-top: 80px;
+  // }
+
+}
+
+
+
+.h1:hover {
+  color: rgb(237, 205, 31);
+}
+
 .logo {
-    width: 70px;
-    height: 80px;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 90px;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 30px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 22px;
+  width: 70px;
+  height: 80px;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.active {
+  transition: 0.5s;
+}
+
+.nav ul a:hover {
+  color: rgb(237, 205, 31);
+}
+
+nav ul {
+  transition: 0.5s;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: white;
+  /* Чёрный цвет текста для ссылок */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+
+.logoContainer {
+  display: contents;
+
+  h1 {
     color: white;
-    cursor: pointer;
+    font-family: "Unlock", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
   }
-  
-  .active {
-    transition: 0.5s;
-  }
-  
-  .active:hover {
-    color: rgb(237, 205, 31);
-  }
-  
+
+}
+
+/* Стили для бургер-меню */
+.burgerIcon {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+
+
+/* Мобильные стили */
+@media (max-width: 768px) {
   .back {
     background-color: rgba(30, 45, 59);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
-  
-  .burgerIcon {
+  .nav {
     display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: rgba(30, 45, 59);
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
   }
-  
-  /* Медиазапросы для адаптивности */
-  @media (max-width: 768px) {
-    .nav {
-      position: absolute;
-      top: 80px;
-      right: 0;
-      background-color: rgba(30, 45, 59);
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px 0;
-      display: none;
-    }
-  
-    .activeMenu {
-      display: flex;
-    }
-  
-    .burgerIcon {
-      display: block;
-    }
-  
-    .logo {
-      width: 50px;
-      height: 60px;
-    }
-  
-    .navbar {
-      padding: 10px 20px;
-    }
+
+  .h1 {
+    font-size: 1px;
   }
-  
+
+  .activeMenu {
+    display: flex;
+  }
+
+  .burgerIcon {
+    display: block;
+  }
+
+  .logo {
+    width: 50px;
+    height: 60px;
+  }
+
+}

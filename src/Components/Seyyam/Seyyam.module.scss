@@ -1,7 +1,7 @@
 
 
 .slider {
-    max-width: 1300px;
+    max-width: 1400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,33 @@
         opacity: 0.5;
         line-height: 1.6em;
     }
+    
 }
 .card{
     width: 700px;
 }
+@media (max-width: 480px) {
+    .slider {
+        display: flex;
+        flex-direction: column;
+
+      .card {
+        padding: 5px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+  
+        h1 {
+          font-size: 20px; /* Еще меньше для очень маленьких экранов */
+        }
+  
+        p {
+          font-size: 15px; /* Уменьшаем текст для маленьких устройств */
+        }
+      }
+  
+      img {
+        margin-top: 5px;
+      }
+    }
+  }

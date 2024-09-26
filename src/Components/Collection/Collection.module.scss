@@ -1,12 +1,57 @@
 .container{
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
     margin-top: 70px;
+    h1{
+        text-align: center;
+        font-size: 55px;
+        margin-bottom:80px;
+        color: black;
+    }
 }
-.img{
-    width: 100%;
-    height: 750px;
-    padding: 20px;
+.wrapper {
+  position: relative;
+  overflow: hidden;
 }
-.card{
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none; /* Чтобы предотвратить взаимодействие с видео */
 }
+
+.container {
+  position: relative;
+  z-index: 2; /* Контент поверх видео */
+  text-align: center;
+  color: white;
+  padding: 0 auto;
+}
+
+.img {
+  max-width: 100%;
+  height: 600px;
+  padding: 0px 20px;
+}
+
+@media (max-width: 1024px) {
+    .container h1 {
+      font-size: 30px; /* Уменьшаем размер заголовка для экранов меньше 1024px */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container h1 {
+      font-size: 24px; /* Еще меньше заголовок для маленьких экранов */
+    }
+  
+    .img {
+      width: 100%;
+      height: 250px; /* Изображения адаптируются под ширину контейнера */
+    }
+  }
