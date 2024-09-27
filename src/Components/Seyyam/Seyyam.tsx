@@ -57,7 +57,6 @@ function SimpleSlider() {
                                 <div className={style.slider}>
                                     
                                     <div className={style.card}>
-                                        
                                         <h1>{seyyam.title}</h1>
                                         <p>{seyyam.description}</p>
                                     </div>

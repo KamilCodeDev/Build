@@ -39,7 +39,7 @@
 
   .card {
     .bg-img-hero-center {
-      min-height: 500px;
+      min-height: 300px;
       /* Уменьшаем высоту изображений */
     }
   }
@@ -53,8 +53,17 @@
 
   .card {
     .bg-img-hero-center {
-      min-height: 300px;
+      height: 300px;
       /* Еще меньше высота изображений */
     }
+  }
+}
+.slide {
+  .bg-img-hero-center {
+      min-height: 700px; // Высота по умолчанию
+
+      @media (max-width: 768px) {
+          min-height: 200px; // Высота 200px при ширине экрана до 768px
+      }
   }
 }

@@ -55,7 +55,7 @@ const Header = () => {
                 <div>
                     {header?.map((header) => (
                         <div key={header.id}>
-                            <h1>{header.title}</h1>
+                            <h1 className={styles.title}>{header.title}</h1>
                         </div>
                     ))}
 
