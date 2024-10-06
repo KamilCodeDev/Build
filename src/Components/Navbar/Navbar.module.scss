@@ -133,3 +133,19 @@ nav ul {
   }
 
 }
+
+.languageSwitch {
+  background-color:rgba(30, 45, 59); /* Задайте основной цвет кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px 10px; /* Внутренние отступы */
+  border-radius: 20px; /* Округление углов */
+  border: none; /* Убираем стандартную рамку */
+  cursor: pointer; /* Указатель при наведении */
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+}
+
+.languageSwitch:hover {
+  background-color: #388e3c; /* Цвет при наведении */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}

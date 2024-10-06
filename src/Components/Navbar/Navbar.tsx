@@ -37,7 +37,7 @@ const Navbar = () => {
           <ul onClick={toggleMenu} className={style.active}><a href="#Seyyam">Проекты</a></ul>
           <ul onClick={toggleMenu} className={style.active}><a href="#Fotter">Контакты</a></ul>
         </nav>
-        <select name="inter" id="inter" onChange={(event) => changeLanguage(event.target.value)} defaultValue={localStorage.getItem("i18nextLng") || "uz"}>
+        <select className={style.languageSwitch} name="inter" id="inter" onChange={(event) => changeLanguage(event.target.value)} defaultValue={localStorage.getItem("i18nextLng") || "uz"}>
           <option value="en">EN</option>
           <option value="ru">RU</option>
           <option value="uz">UZ</option>
