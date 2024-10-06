@@ -2,16 +2,18 @@ import styles from './Header.module.scss';
 import { SlArrowDown } from "react-icons/sl";
 import video1 from '../../assets/video1.mp4';
 import { useEffect, useState } from "react";
-import { useHeader } from "./hook/useHeader";
+import { IHeader, useHeader } from "./hook/useHeader";
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft()); // Изначальное состояние для времени до конца месяца
+    const { i18n } = useTranslation();
 
     // Функция для расчёта времени до конца месяца
     function calculateTimeLeft() {
         const now = new Date();
         const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1); // Первое число следующего месяца
-        //@ts-ignorets-ignore
+        // @ts-expect-error abc
         const difference = nextMonth - now; 
 
         const timeLeft = {
@@ -46,6 +48,18 @@ const Header = () => {
     const { data: header } = useHeader();
     console.log(header);
 
+    const renderTitle = (header: IHeader) => {
+        switch (i18n.language) {
+          case 'ru':
+            return header.title_ru;
+          case 'uz':
+            return header.title_uz;
+          case 'en':
+          default:
+            return header.title_en;
+        }
+    };
+
     return (
         <div className={styles.header}>
             <video className={styles.video} autoPlay loop muted playsInline onError={handleVideoError}>
@@ -55,7 +69,7 @@ const Header = () => {
                 <div>
                     {header?.map((header) => (
                         <div key={header.id}>
-                            <h1 className={styles.title}>{header.title}</h1>
+                            <h1 className={styles.title}>{renderTitle(header)}</h1>
                         </div>
                     ))}
 

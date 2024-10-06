@@ -3,7 +3,9 @@ import { useQuery } from "react-query";
 
 export interface IHeader {
     id: string;
-    title: string;
+    title_ru: string;
+    title_uz: string;
+    title_en: string;
 }
 
 
