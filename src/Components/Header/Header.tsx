@@ -6,29 +6,13 @@ import { IHeader, useHeader } from "./hook/useHeader";
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft()); // Изначальное состояние для времени до конца месяца
+    const [currentTime, setCurrentTime] = useState(new Date());  // Изначальное состояние с текущим временем
     const { i18n } = useTranslation();
 
-    // Функция для расчёта времени до конца месяца
-    function calculateTimeLeft() {
-        const now = new Date();
-        const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1); // Первое число следующего месяца
-        // @ts-expect-error abc
-        const difference = nextMonth - now; 
-
-        const timeLeft = {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / 1000 / 60) % 60),
-            seconds: Math.floor((difference / 1000) % 60)
-        };
-
-        return timeLeft;
-    }
-
+    // Функция для обновления текущего времени каждую секунду
     useEffect(() => {
         const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
+            setCurrentTime(new Date());  // Устанавливаем текущее время
         }, 1000);
 
         return () => clearInterval(timer); // Очистка интервала при размонтировании компонента
@@ -60,6 +44,9 @@ const Header = () => {
         }
     };
 
+    // Форматирование текущего времени в строку (например, "14:30:45")
+    const formattedTime = `${currentTime.getHours()}:${currentTime.getMinutes().toString().padStart(2, '0')}:${currentTime.getSeconds().toString().padStart(2, '0')}`;
+
     return (
         <div className={styles.header}>
             <video className={styles.video} autoPlay loop muted playsInline onError={handleVideoError}>
@@ -73,11 +60,9 @@ const Header = () => {
                         </div>
                     ))}
 
-                    {/* Обратный отсчет до конца месяца */}
-                    <div className={styles.countdown}>
-                        <h2 className={styles.timer}>
-                            {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
-                        </h2>
+                    {/* Отображение текущего времени */}
+                    <div className={styles.time}>
+                        <h2 className={styles.timer}>{formattedTime}</h2>
                     </div>
 
                     <SlArrowDown color="white" size={90} onClick={scrollToSection} style={{ cursor: "pointer" }} />

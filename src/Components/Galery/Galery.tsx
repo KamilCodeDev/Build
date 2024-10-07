@@ -26,6 +26,7 @@ const Gallery = () => {
             },
         ],
     };
+    
 
     const { data: galery } = useGalery();
     console.log(galery);
@@ -41,7 +42,8 @@ const Gallery = () => {
                                 className="bg-img-hero-center"
                                 style={{
                                     backgroundImage: `url(${galery.img})`,
-                                    minHeight: "700px", // Высота остается неизменной для больших экранов
+                                    width:"600px",
+                                    minHeight: "600px", // Высота остается неизменной для больших экранов
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                 }}

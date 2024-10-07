@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date()); // Состояние для текущего времени
   const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
@@ -17,19 +18,35 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-    return () => {
-      document.documentElement.style.scrollBehavior = "auto"; 
-    };
+    const timer = setInterval(() => {
+      setCurrentTime(new Date()); // Обновление времени каждую секунду
+    }, 1000);
+
+    return () => clearInterval(timer); // Очистка таймера при размонтировании
   }, []);
+
+  // Форматирование времени
+  const formattedTime = currentTime.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
 
   return (
     <div className={style.back}>
+      
       <div className={style.navbar}>
         <div className={style.logoContainer}>
+        <div className={style.clock}>
+          {formattedTime}
+        </div>
           <img className={style.logo} src={img1} alt="logo" />
           <h1 className={style.h1}>SEYYAM INTERNATIONAL GROUP</h1>
         </div>
+        
+        {/* Отображение часов */}
+       
+        
         <nav className={`${style.nav} ${isMenuOpen ? style.activeMenu : ""}`}>
           <ul onClick={toggleMenu} className={style.active}><a href="#">{t("home")}</a></ul>
           <ul onClick={toggleMenu} className={style.active}><a href="#Service">Услуги</a></ul>
@@ -37,11 +54,13 @@ const Navbar = () => {
           <ul onClick={toggleMenu} className={style.active}><a href="#Seyyam">Проекты</a></ul>
           <ul onClick={toggleMenu} className={style.active}><a href="#Fotter">Контакты</a></ul>
         </nav>
+        
         <select className={style.languageSwitch} name="inter" id="inter" onChange={(event) => changeLanguage(event.target.value)} defaultValue={localStorage.getItem("i18nextLng") || "uz"}>
           <option value="en">EN</option>
           <option value="ru">RU</option>
           <option value="uz">UZ</option>
         </select>
+        
         <div className={style.burgerIcon} onClick={toggleMenu}>
           <FaBars />
         </div>

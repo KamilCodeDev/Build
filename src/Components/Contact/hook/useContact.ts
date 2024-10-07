@@ -1,27 +1,21 @@
 import { httpclient } from "../../../http";
 import { useQuery } from "react-query";
 
-export interface ISevice {
+export interface IContact {
     id: string;
-    title_ru: string;
-    title_uz: string;
-    title_en: string;
-    description_ru: string;
-    description_uz: string;
-    description_en: string;
-    img: string;
-    
+    first_contact: string;
+    second_contact: string;
 }
 
 
 
-export const useService = () => {
-    return useQuery<ISevice[]>({
-        queryKey: ["/service/"],
+export const useContact = () => {
+    return useQuery<IContact[]>({
+        queryKey: ["/contact/"],
 
         queryFn: async () => {
             try {
-                const responce = await httpclient.get("/main/service/")
+                const responce = await httpclient.get("/main/contact/")
                 if (responce && responce.data) {
                     return responce.data;
                 } else {

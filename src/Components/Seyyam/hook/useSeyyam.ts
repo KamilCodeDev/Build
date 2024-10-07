@@ -3,9 +3,13 @@ import { useQuery } from "react-query";
 
 export interface ISeyyam {
     id: string;
-    title: string;
+    title_uz: string;
+    title_ru: string;
+    title_en: string;
     img: string;
-    description: string;
+    description_ru: string;
+    description_uz: string;
+    description_en: string;
 }
 
 

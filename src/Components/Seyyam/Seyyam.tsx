@@ -1,75 +1,99 @@
-import style from "./Seyyam.module.scss"
+import { useRef } from "react";
+import style from "./Seyyam.module.scss";
 import Slider from "react-slick";
-import { useSeyyam } from "./hook/useSeyyam"
-// @ts-ignore
-const NextArrow = ({ className, style, onClick }) => (
-    <div
-        className={className}
-        style={{
-            ...style,
-            display: "none",
-            right: "10px",
-            zIndex: 1,
-            color: "#ff0000",
-            fontSize: "30px",
-        }}
-        onClick={onClick}
-    />
-);
-function SimpleSlider() {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        nextArrow: <NextArrow className={undefined} style={undefined} onClick={undefined} />,
-        responsive: [
+import { ISeyyam, useSeyyam } from "./hook/useSeyyam";
+import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";  // Иконки стрелок
 
+const SimpleSlider = () => {
+  const { i18n } = useTranslation();  
+  const sliderRef = useRef(null);  // Ссылка на слайдер для управления с помощью кнопок
 
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    };
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,  // Отключаем стандартные стрелки
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
-    const { data: seyyam } = useSeyyam();
-    console.log(seyyam);
+  const { data: seyyam } = useSeyyam();
+  console.log(seyyam);
 
+  const renderTitle = (seyyamItem: ISeyyam) => {
+    switch (i18n.language) {
+      case 'ru':
+        return seyyamItem.title_ru;
+      case 'uz':
+        return seyyamItem.title_uz;
+      case 'en':
+      default:
+        return seyyamItem.title_en;
+    }
+  };
 
+  const renderDescription = (seyyamItem: ISeyyam) => {
+    switch (i18n.language) {
+      case 'ru':
+        return seyyamItem.description_ru;
+      case 'uz':
+        return seyyamItem.description_uz;
+      case 'en':
+      default:
+        return seyyamItem.description_en;
+    }
+  };
 
+  const nextSlide = () => {
+    // @ts-ignore
+    sliderRef.current.slickNext();  // Переход на следующий слайд
+  };
 
-    return (
-        <div>
-            <div id="Seyyam">
-                
-                <div className="slider-container">
-                    <Slider {...settings}>
-                        
-                    {seyyam?.map((seyyam) => (
-                        <div className={style.container}>
-                                <div className={style.slider}>
-                                    
-                                    <div className={style.card}>
-                                        <h1>{seyyam.title}</h1>
-                                        <p>{seyyam.description}</p>
-                                    </div>
-                                    <img src={seyyam.img} alt="" />
-                                </div>
-                           
-                        </div>
-                         ))}
-                    </Slider>
+  const prevSlide = () => {
+    // @ts-ignore
+    sliderRef.current.slickPrev();  // Переход на предыдущий слайд
+  };
+
+  return (
+    <div>
+      <div id="Seyyam">
+        <div className={style.sliderContainer}>
+          <Slider ref={sliderRef} {...settings}>
+            {seyyam?.map((seyyamItem) => (
+              <div className={style.container} key={seyyamItem.id}>
+                <div className={style.slider}>
+                  <div className={style.card}>
+                    <h1>{renderTitle(seyyamItem)}</h1>  
+                    <p>{renderDescription(seyyamItem)}</p>  
+                  </div>
+                  <img src={seyyamItem.img} alt="" />
                 </div>
-            </div>
+              </div>
+            ))}
+          </Slider>
+
+          <button className={style.prevButton} onClick={prevSlide}>
+            <FaArrowLeft />
+          </button>
+          <button className={style.nextButton} onClick={nextSlide}>
+            <FaArrowRight />
+          </button>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default SimpleSlider;
