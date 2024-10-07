@@ -67,7 +67,7 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div>
+    <div className={style.container_seyyam}>
       <div id="Seyyam">
         <div className={style.sliderContainer}>
           <Slider ref={sliderRef} {...settings}>

@@ -4,6 +4,8 @@ import img1 from "../../Assets/img1.png";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
+
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date()); // Состояние для текущего времени
@@ -37,25 +39,38 @@ const Navbar = () => {
       
       <div className={style.navbar}>
         <div className={style.logoContainer}>
-        <div className={style.clock}>
-          {formattedTime}
-        </div>
+          <div className={style.clock}>
+            {formattedTime}
+          </div>
           <img className={style.logo} src={img1} alt="logo" />
           <h1 className={style.h1}>SEYYAM INTERNATIONAL GROUP</h1>
         </div>
         
-        {/* Отображение часов */}
-       
-        
         <nav className={`${style.nav} ${isMenuOpen ? style.activeMenu : ""}`}>
-          <ul onClick={toggleMenu} className={style.active}><a href="#">{t("home")}</a></ul>
-          <ul onClick={toggleMenu} className={style.active}><a href="#Service">Услуги</a></ul>
-          <ul onClick={toggleMenu} className={style.active}><a href="#Collection">О нас</a></ul>
-          <ul onClick={toggleMenu} className={style.active}><a href="#Seyyam">Проекты</a></ul>
-          <ul onClick={toggleMenu} className={style.active}><a href="#Fotter">Контакты</a></ul>
+          <ul onClick={toggleMenu} className={style.active}>
+            <a href="#">{t("home")}</a>
+          </ul>
+          <ul onClick={toggleMenu} className={style.active}>
+            <a href="#Service">{t("services")}</a>
+          </ul>
+          <ul onClick={toggleMenu} className={style.active}>
+            <a href="#Collection">{t("about_us")}</a>
+          </ul>
+          <ul onClick={toggleMenu} className={style.active}>
+            <a href="#Seyyam">{t("projects")}</a>
+          </ul>
+          <ul onClick={toggleMenu} className={style.active}>
+            <a href="#Fotter">{t("contacts")}</a>
+          </ul>
         </nav>
         
-        <select className={style.languageSwitch} name="inter" id="inter" onChange={(event) => changeLanguage(event.target.value)} defaultValue={localStorage.getItem("i18nextLng") || "uz"}>
+        <select 
+          className={style.languageSwitch} 
+          name="inter" 
+          id="inter" 
+          onChange={(event) => changeLanguage(event.target.value)} 
+          defaultValue={localStorage.getItem("i18nextLng") || "uz"}
+        >
           <option value="en">EN</option>
           <option value="ru">RU</option>
           <option value="uz">UZ</option>

@@ -19,7 +19,7 @@ i18n
         //     order: ['queryString', 'cookie'],
         //     cache: ['cookie']
         // },
-        ns: ["translation", "Sidebar", "Authorization", "ViewCourse", "Notifications"],
+        ns: ["translation", "Simple", "Gallery"],
         defaultNS: 'translation',
         react: {
             useSuspense: true,

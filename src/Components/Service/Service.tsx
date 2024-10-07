@@ -1,7 +1,7 @@
 import styles from './Service.module.scss'
 import { useTranslation } from 'react-i18next';  // Добавляем useTranslation для перевода
 import { useService, ISevice } from "./hook/useService";
-import i18n from '../../i18n';  // Импорт i18n для получения текущего языка
+
 
 const Service = () => {
     // Вызов useService должен находиться внутри компонента

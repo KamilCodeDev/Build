@@ -6,6 +6,15 @@
   margin: 0 auto;
 }
 
+.card {
+  .bg-img-hero-center {
+    transition: all 0.3s;
+    
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
 
 
 .slide {

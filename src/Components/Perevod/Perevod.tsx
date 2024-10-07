@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const API_KEY = 'https://back-texnoprom.uz/'; // Замените на свой API ключ
 
+//@ts-ignore
 const Translator: React.FC = () => {
     const [text, setText] = useState<string>('');
     const [translatedText, setTranslatedText] = useState<string>('');

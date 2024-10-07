@@ -16,6 +16,7 @@ i18n
     fallbackLng: 'ru',
     debug: false,
     // Распознавание и кэширование языковых кук
+    ns: ["translation", "Simple", "Gallery"],
     detection: {
       order: ['queryString', 'cookie'],
       cache: ['cookie'],

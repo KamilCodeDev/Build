@@ -60,8 +60,12 @@
       max-width: 400px; // Максимальная ширина для больших экранов
       height: 500px;
       border-radius: 10px;
+      transition: all 0.3s;
     }
   }
+  .img:hover{
+    transform: scale(1.15);
+}
 
   // Адаптация для планшетов
   @media (max-width: 1024px) {
