@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&family=Unlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 .back {
   background-color: rgba(30, 45, 59);
@@ -43,7 +43,7 @@
 .nav {
   display: flex;
   gap: 30px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", serif;
   font-weight: 300;
   font-size: 22px;
   color: white;
@@ -65,8 +65,7 @@ nav ul {
 .nav ul a {
   text-decoration: none;
   color: white;
-  /* Чёрный цвет текста для ссылок */
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", serif;
   font-weight: 300;
   font-size: 22px;
   transition: color 0.3s ease;
@@ -78,7 +77,7 @@ nav ul {
 
   h1 {
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: "Lora", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30px;

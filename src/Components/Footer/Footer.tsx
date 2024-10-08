@@ -43,19 +43,19 @@ const Footer = () => {
                     <form className={style.form} onSubmit={handleSubmit}>
                         <div className={style.row}>
                             <label htmlFor="name">
-                                Name
+                                <h2>Name</h2>
                                 <input type="text" id="name" name="name" required />
                             </label>
                         </div>
                         <label htmlFor="number">
-                            Contact
+                            <h2>Contact</h2>
                             <input type="number" id="number" name="number" required />
                         </label>
                         <button type="submit">{isLoading ? "..." : "Send"}</button>
                         <div className={style.logo}>
-                            <FaFacebook size={25} />
-                            <FaSquareInstagram size={25} />
-                            <FaTelegram size={25} />
+                            <FaFacebook size={40} />
+                            <FaSquareInstagram size={40} />
+                            <FaTelegram size={40} />
                         </div>
                     </form>
                 </div>

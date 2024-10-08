@@ -60,10 +60,7 @@ const Header = () => {
                         </div>
                     ))}
 
-                    {/* Отображение текущего времени */}
-                    <div className={styles.time}>
-                        <h2 className={styles.timer}>{formattedTime}</h2>
-                    </div>
+                 
 
                     <SlArrowDown color="white" size={90} onClick={scrollToSection} style={{ cursor: "pointer" }} />
                 </div>
