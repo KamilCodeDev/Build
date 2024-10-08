@@ -10,6 +10,7 @@ const Contact = () => {
 
   return (
       <div className={styles.wrapper}>
+        <h1>СВЯЗАТСЯ С НАМИ </h1>
           <div className={styles.contactCard}>
               {contact?.map((contact) => (
                   <div key={contact.id} className={styles.contactWrapper}>

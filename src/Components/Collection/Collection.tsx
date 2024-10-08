@@ -51,7 +51,6 @@ export default function SimpleSlider() {
     <div id="Collection" className={style.wrapper}>
       <div className={style.container}>
         <h1>{t("Simple:komil")}</h1>  
-
         <Slider ref={sliderRef} {...settings}>
           {collection?.map((collectionItem) => (
             <div key={collectionItem.id}>
@@ -64,7 +63,6 @@ export default function SimpleSlider() {
           ))}
         </Slider>
 
-        {/* Кнопки для перелистывания */}
         <button className={style.prevButton} onClick={prevSlide}>
           <FaArrowLeft />
         </button>

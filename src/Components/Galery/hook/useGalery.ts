@@ -2,6 +2,9 @@ import { httpclient } from "../../../http";
 import { useQuery } from "react-query";
 
 export interface IGalery {
+    title_ru: any;
+    title_uz: any;
+    title_en: any;
     img: string ;
     id: string;
     title: string;

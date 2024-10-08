@@ -1,61 +1,45 @@
 import { useTranslation } from "react-i18next";  // Импорт хука для перевода
 import style from "./Galery.module.scss";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useGalery } from "./hook/useGalery";
+
+import { useGalery, IGalery } from "./hook/useGalery";  // Импорт интерфейса IGalery
 
 const Gallery = () => {
-    const { t } = useTranslation();  // Используем хук для перевода
+    const { i18n, t } = useTranslation();  // Используем хук для перевода
+    const { data: galery } = useGalery();
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2, // 2 слайда для больших экранов
-        slidesToScroll: 1,
-        rows: 2,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 768, // Адаптация для экранов меньше 768px (мобильные)
-                settings: {
-                    slidesToShow: 1, // Один слайд на экранах меньше 768px
-                    slidesToScroll: 1,
-                },
-            },
-        ],
+    // Функция для отображения заголовка галереи в зависимости от текущего языка
+    const renderTitle = (galeryItem: IGalery) => {
+        switch (i18n.language) {
+            case 'ru':
+                return galeryItem.title_ru;
+            case 'uz':
+                return galeryItem.title_uz;
+            case 'en':
+            default:
+                return galeryItem.title_en;
+        }
     };
 
-    const { data: galery } = useGalery();
-    console.log(galery);
-
     return (
-        <div className={style.slide}>
-            {/* Используем t('key') для перевода */}
-            <h1>{t("projects")}</h1>
-            <div>
-                <Slider {...settings}>
-                    {galery?.map((galery) => (
-                        <div className={style.card} key={galery.id}>
-                            <div
-                                className="bg-img-hero-center"
-                                style={{
-                                    backgroundImage: `url(${galery.img})`,
-                                    width: "600px",
-                                    minHeight: "600px", // Высота остается неизменной для больших экранов
-                                    backgroundSize: "cover",
-                                    backgroundPosition: "center",
-                                }}
-                            ></div>
-                       
+        <div id="Project">
+            <div className={style.galleryContainer}>
+                <h1>{t("projects")}</h1>  {/* Перевод заголовка "Проекты" */}
+                <div className={style.gridContainer}>
+                    {galery?.map((galeryItem) => (
+                        <div className={style.gridItem} key={galeryItem.id}>
+                            <div className={style.imageWrapper}>
+                                <img src={galeryItem.img} alt="" className={style.image} />
+                                <div className={style.overlay}>
+                                    <div className={style.text}>
+                                        <h1>{renderTitle(galeryItem)}</h1>  {/* Отображение заголовка в зависимости от языка */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
-        </Slider>
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     );
 };
 

@@ -22,6 +22,7 @@
   // }
 
 }
+
 .clock {
   font-size: 24px;
   font-weight: bold;
@@ -71,9 +72,20 @@ nav ul {
   transition: color 0.3s ease;
 }
 
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+.phoneLink{
+color: white;
+font-size: 18px;
+}
 
 .logoContainer {
-  display: contents;
+  display: flex;
+  align-items: center;
 
   h1 {
     color: white;
@@ -104,9 +116,11 @@ nav ul {
     width: 100%;
     z-index: 1000;
   }
-  .h1{
+
+  .h1 {
     display: none;
   }
+
   .nav {
     display: none;
     flex-direction: column;
@@ -140,17 +154,26 @@ nav ul {
 }
 
 .languageSwitch {
-  background-color:rgba(30, 45, 59); /* Задайте основной цвет кнопки */
-  color: white; /* Цвет текста */
-  padding: 10px 10px; /* Внутренние отступы */
-  border-radius: 20px; /* Округление углов */
-  border: none; /* Убираем стандартную рамку */
-  cursor: pointer; /* Указатель при наведении */
+  background-color: rgba(30, 45, 59);
+  /* Задайте основной цвет кнопки */
+  color: white;
+  /* Цвет текста */
+  padding: 10px 10px;
+  /* Внутренние отступы */
+  border-radius: 20px;
+  /* Округление углов */
+  border: none;
+  /* Убираем стандартную рамку */
+  cursor: pointer;
+  /* Указатель при наведении */
   font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Плавная анимация */
 }
 
 .languageSwitch:hover {
-  background-color: #388e3c; /* Цвет при наведении */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+  background-color: #388e3c;
+  /* Цвет при наведении */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Тень при наведении */
 }

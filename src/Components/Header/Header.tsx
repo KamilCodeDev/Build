@@ -45,6 +45,9 @@ const Header = () => {
     };
 
     return (
+        <div id='Header'>
+
+       
         <div className={styles.header}>
             <video className={styles.video} autoPlay loop muted playsInline onError={handleVideoError}>
                 <source src={video1} type="video/mp4" />
@@ -62,6 +65,7 @@ const Header = () => {
                     <SlArrowDown color="white" size={90} onClick={scrollToSection} style={{ cursor: "pointer" }} />
                 </div>
             </div>
+        </div>
         </div>
     );
 };

@@ -53,15 +53,18 @@
         cursor: pointer;
         border: none;
         background-color: #edcd1f;
-        color: white;
+        color: black;
+        font-size: 20px;
         border-radius: 10px;
+        transition-duration: 0.4s;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s;
     }
 }
-.logo{
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-}
+
 @media (max-width: 768px) {
     .footer {
       flex-direction: column;

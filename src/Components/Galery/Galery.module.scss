@@ -1,76 +1,72 @@
-.container {
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.card {
-  .bg-img-hero-center {
-    transition: all 0.3s;
-    
-    &:hover {
-      transform: scale(1.15);
-    }
-  }
-}
-
-
-.slide {
-  max-width: 1300px;
-  margin: 0 auto;
+.galleryContainer {
   text-align: center;
-  margin-top: 120px;
-
-  h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 60px;
-    margin-bottom: 50px
+  padding: 20px;
+  margin-top: 50px;
+  h1{
+    font-size: 50px;
+    margin-bottom: 30px;
   }
 }
 
-.card {
+.gridContainer {
   display: flex;
-  justify-self: center;
-  padding: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .slide h1 {
-    font-size: 30px;
-  }
-
-  .card {
-    .bg-img-hero-center {
-      min-height: 300px;
-      /* Уменьшаем высоту изображений */
-    }
-  }
+.gridItem {
+  width: calc(50% - 10px);
+  display: flex;
+  justify-content: center;
 }
 
-/* Адаптивные стили для экранов до 768px */
-@media (max-width: 768px) {
-  .slide h1 {
-    font-size: 24px;
-  }
-
-  .card {
-    .bg-img-hero-center {
-      height: 300px;
-      /* Еще меньше высота изображений */
-    }
-  }
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden; /* Скрываем все, что выходит за пределы */
 }
-.slide {
-  .bg-img-hero-center {
-      min-height: 700px; // Высота по умолчанию
 
-      @media (max-width: 768px) {
-          min-height: 200px;
-          // Высота 200px при ширине экрана до 768px
-      }
-  }
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.1); /* Масштабируем картинку при наведении */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Текст появляется снизу */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.text {
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+  transform: translateY(100%); /* Текст скрыт ниже */
+  transition: transform 0.5s ease-in-out;
+}
+
+.imageWrapper:hover .overlay {
+  opacity: 1; /* Показать overlay при наведении */
+}
+
+.imageWrapper:hover .text {
+  transform: translateY(0); /* Поднимаем текст вверх при наведении */
 }

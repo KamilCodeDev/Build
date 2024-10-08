@@ -1,25 +1,26 @@
-.wrapper {
-    display: flex;
-    justify-content: flex-end; /* Размещает карточку справа */
-    padding: 20px;
-    width: 100%; /* Занимает всю ширину экрана */
-    box-sizing: border-box;
-}
+// .wrapper {
+//     display: flex;
+//     justify-content: flex-end; /* Размещает карточку справа */
+//     padding: 20px;
+//     width: 100%; /* Занимает всю ширину экрана */
+//     box-sizing: border-box;
+    
+// }
 
-.contactCard {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    max-width: 300px;
-    width: 100%; /* Занимает всю ширину родительского контейнера */
-}
+// .contactCard {
+//     border: 1px solid #ddd;
+//     border-radius: 8px;
+//     background-color: #f9f9f9;
+//     padding: 20px;
+//     max-width: 300px;
+//     width: 100%; /* Занимает всю ширину родительского контейнера */
+// }
 
-.contactWrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+// .contactWrapper {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-bottom: 10px;
+// }
 
 .contactItem {
     font-size: 18px;
@@ -29,7 +30,25 @@
     margin: 0 5px;
 }
 
-.separator {
-    font-size: 18px;
-    color: #666;
-}
+// .separator {
+//     font-size: 18px;
+//     color: #666;
+// }
+@media (max-width: 480px) {
+    .contactCard {
+      flex-direction: column;
+    }
+  
+    .contactWrapper {
+      margin: 5px 0;
+    }
+  
+    .contactItem {
+      font-size: 0.9rem;
+      padding: 5px;
+    }
+  
+    .separator {
+      display: none;
+    }
+  }

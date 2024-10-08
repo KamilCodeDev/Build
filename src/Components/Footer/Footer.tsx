@@ -5,6 +5,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 
 import axios from "axios"
+import Contact from "../Contact/Contact";
 
 
 
@@ -51,13 +52,15 @@ const Footer = () => {
                             <h2>Contact</h2>
                             <input type="number" id="number" name="number" required />
                         </label>
-                        <button type="submit">{isLoading ? "..." : "Send"}</button>
-                        <div className={style.logo}>
+                        <button  type="submit">{isLoading ? "..." : "Send"}</button>
+                        <Contact/>
+                      
+                    </form>
+                    <div className={style.logo}>
                             <FaFacebook size={40} />
                             <FaSquareInstagram size={40} />
                             <FaTelegram size={40} />
                         </div>
-                    </form>
                 </div>
 
             </div>

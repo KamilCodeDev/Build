@@ -3,19 +3,26 @@
 .wrapper {
   position: relative;
   padding: 50px 0;
+  background: url("../../assets/img17.jpg") no-repeat center center/ cover;
+  background-size: cover;
+  height: 100vh;
+  
+
 
   .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
+    
 
     h1 {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
       font-style: normal;
       font-size: 60px;
-      margin-bottom: 50px
+      margin-bottom: 50px;
+      color: white;
     }
 
 
