@@ -1,18 +1,18 @@
 import styles from './Header.module.scss';
 import { SlArrowDown } from "react-icons/sl";
 import video1 from '../../assets/video1.mp4';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { IHeader, useHeader } from "./hook/useHeader";
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-    const [currentTime, setCurrentTime] = useState(new Date());  // Изначальное состояние с текущим временем
+    
     const { i18n } = useTranslation();
 
     // Функция для обновления текущего времени каждую секунду
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentTime(new Date());  // Устанавливаем текущее время
+       
         }, 1000);
 
         return () => clearInterval(timer); // Очистка интервала при размонтировании компонента
@@ -43,9 +43,6 @@ const Header = () => {
             return header.title_en;
         }
     };
-
-    // Форматирование текущего времени в строку (например, "14:30:45")
-    const formattedTime = `${currentTime.getHours()}:${currentTime.getMinutes().toString().padStart(2, '0')}:${currentTime.getSeconds().toString().padStart(2, '0')}`;
 
     return (
         <div className={styles.header}>
