@@ -1,5 +1,5 @@
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +69,8 @@
       min-height: 700px; // Высота по умолчанию
 
       @media (max-width: 768px) {
-          min-height: 200px; // Высота 200px при ширине экрана до 768px
+          min-height: 200px;
+          // Высота 200px при ширине экрана до 768px
       }
   }
 }

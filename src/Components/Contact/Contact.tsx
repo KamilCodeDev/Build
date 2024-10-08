@@ -1,23 +1,30 @@
 
 import { useContact } from "./hook/useContact";
+import styles from "./Contact.module.scss";
+
+
+
 const Contact = () => {
-
-
-    const { data: contact } = useContact();
-    console.log(contact);
-    
-
+  const { data: contact } = useContact();
+  console.log(contact);
 
   return (
-    <div>
-        {contact?.map((contact ) => (
-            <div key={contact.id}>
-                <h1>{contact.first_contact}</h1>
-                <h1>{contact.second_contact}</h1>
-            </div>
-        ))}
-    </div>
-  )
+      <div className={styles.wrapper}>
+          <div className={styles.contactCard}>
+              {contact?.map((contact) => (
+                  <div key={contact.id} className={styles.contactWrapper}>
+                      <a href={`tel:${contact.first_contact}`} className={styles.contactItem}>
+                          {contact.first_contact}
+                      </a>
+                      <span className={styles.separator}> | </span>
+                      <a href={`tel:${contact.second_contact}`} className={styles.contactItem}>
+                          {contact.second_contact}
+                      </a>
+                  </div>
+              ))}
+          </div>
+      </div>
+  );
 }
 
 export default Contact;

@@ -22,7 +22,7 @@ const Footer = () => {
         const url = `https://api.telegram.org/bot${import.meta.env.VITE_BOT_TOKEN}/sendMessage`;
         const payload = {
             chat_id: import.meta.env.VITE_CHAT_ID,
-            text: `<b>Имя:</b> <i>${fields.name}</i>\n<b>Фамилия:</b> <i>${fields.surname}</i>\n<strong>Почта:</strong> <i>${fields.email}</i>\n<b>Сообщение:</b> <i>${fields.message}</i>`,
+            text: `<b>Имя:</b> <i>${fields.name}</i>\n<strong>Номер:</strong> <i>${fields.number}</i>`,
             parse_mode: "HTML",
         };
 
@@ -43,21 +43,13 @@ const Footer = () => {
                     <form className={style.form} onSubmit={handleSubmit}>
                         <div className={style.row}>
                             <label htmlFor="name">
-                                First Name
+                                Name
                                 <input type="text" id="name" name="name" required />
                             </label>
-                            <label htmlFor="surname">
-                                Last Name
-                                <input type="text" id="surname" name="surname" required />
-                            </label>
                         </div>
-                        <label htmlFor="email">
-                            Email
-                            <input type="email" id="email" name="email" required />
-                        </label>
-                        <label htmlFor="message">
-                            Message
-                            <textarea name="message" id="message" required></textarea>
+                        <label htmlFor="number">
+                            Contact
+                            <input type="number" id="number" name="number" required />
                         </label>
                         <button type="submit">{isLoading ? "..." : "Send"}</button>
                         <div className={style.logo}>

@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-end; /* Размещает карточку справа */
+    padding: 20px;
+    width: 100%; /* Занимает всю ширину экрана */
+    box-sizing: border-box;
+}
+
+.contactCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    max-width: 300px;
+    width: 100%; /* Занимает всю ширину родительского контейнера */
+}
+
+.contactWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.contactItem {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.separator {
+    font-size: 18px;
+    color: #666;
+}
