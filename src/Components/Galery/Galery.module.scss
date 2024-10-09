@@ -1,72 +1,92 @@
 .galleryContainer {
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
-  h1{
-    font-size: 50px;
-    margin-bottom: 30px;
+  background-color: #1a1a1a; /* Тёмный фон, как на примере */
+  height: 110vh;
+  h2{
+    color: white;
+    font-size: 49px;
   }
 }
 
-.gridContainer {
+.slideItem {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
 
-.gridItem {
-  width: calc(50% - 10px);
-  display: flex;
-  justify-content: center;
 }
 
 .imageWrapper {
   position: relative;
-  width: 100%;
-  max-width: 500px;
-  overflow: hidden; /* Скрываем все, что выходит за пределы */
+  width: 80%; /* Ширина изображения как в примере */
+  margin: 0 auto;
 }
 
 .image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  width: 1100px;
+  height: 500px;
+  object-fit: cover; /* Обеспечивает правильное отображение изображения */
 }
 
-.imageWrapper:hover .image {
-  transform: scale(1.1); /* Масштабируем картинку при наведении */
+.galleryContainer {
+  position: relative;
 }
 
-.overlay {
+.imageWrapper {
+  position: relative;
+}
+
+.overlayTitle {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -95px; /* Смещаем заголовок вниз за пределы картинки */
+  left: 50px;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Текст появляется снизу */
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.text {
-  color: #fff;
-  font-size: 18px;
-  padding: 20px;
-  transform: translateY(100%); /* Текст скрыт ниже */
-  transition: transform 0.5s ease-in-out;
+  text-align: start;
+  color: white;
+  font-size: 94px;
+  padding: 10px;
+  z-index: 2;
 }
 
 .imageWrapper:hover .overlay {
-  opacity: 1; /* Показать overlay при наведении */
+  opacity: 1;
 }
 
-.imageWrapper:hover .text {
-  transform: translateY(0); /* Поднимаем текст вверх при наведении */
+.text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+/* Стиль для кастомных кнопок навигации */
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #ffcc00; /* Жёлтый фон, как на примере */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prevButton {
+  left: 40px;
+}
+
+.nextButton {
+  right: 40px;
+}
+
+.prevButton:hover, .nextButton:hover {
+  background-color: #e6b800;
+}
+
+.slick-prev:before, .slick-next:before {
+  content: '';
+} 

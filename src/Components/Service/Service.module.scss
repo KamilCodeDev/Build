@@ -3,6 +3,8 @@
     text-align: center;
     margin-top: 50px;
     margin-bottom: 80px;
+    background: url("../../assets/img19.jpg") no-repeat center center/cover;
+    height: 100vh;
 
     h1 {
         color: black;
@@ -11,6 +13,7 @@
         font-style: normal;
         font-size: 30px;
         font-size: 60px;
+        text-align: center;
     }
     hr{
         width: 120px;
@@ -18,7 +21,7 @@
     }
 }
 .text{
-    padding: 40px;
+    padding: 50px;
     h1{
         color: rgb(61, 89, 117);
         font-size: 22px;
@@ -27,7 +30,11 @@
     p{
         line-height: 1.6em;
         font-size: 20px;
+        text-align: center;
     }
+}
+.serv{
+    background: url("../../assets//img19.jpg") no-repeat center center/cover;
 }
 .img{
     width: 100%;

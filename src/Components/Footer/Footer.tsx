@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react"
 import style from "./Footer.module.scss"
-import { FaFacebook } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaTelegram } from "react-icons/fa";
+import telegram from "../../assets/telegram.png"
+import intagram from "../../assets/instagram.png"
+import facebook from "../../assets/facebook (2).png"
 
 import axios from "axios"
 import Contact from "../Contact/Contact";
@@ -33,15 +33,13 @@ const Footer = () => {
     };
 
     return (
-        <div id="Fotter">
-
-
+        <div data-aos="fade-up" >
             <div className={style.container}>
+            <div className={style.map}>
+                    <iframe id="Fotter" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11990.087432143182!2d69.2153541!3d41.2975096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b004c115c99%3A0x2cfd57386d564703!2sSeyyam%20Group!5e0!3m2!1sru!2s!4v1727351700025!5m2!1sru!2s" width="1400" height="550" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <div className={style.footer}>
-                    <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11990.087432143182!2d69.2153541!3d41.2975096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b004c115c99%3A0x2cfd57386d564703!2sSeyyam%20Group!5e0!3m2!1sru!2s!4v1727351700025!5m2!1sru!2s" width="600" height="450" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <form className={style.form} onSubmit={handleSubmit}>
+                    <form data-aos="fade-up" className={style.form} onSubmit={handleSubmit}>
                         <div className={style.row}>
                             <label htmlFor="name">
                                 <h2>Name</h2>
@@ -52,17 +50,16 @@ const Footer = () => {
                             <h2>Contact</h2>
                             <input type="number" id="number" name="number" required />
                         </label>
-                        <button  type="submit">{isLoading ? "..." : "Send"}</button>
-                        <Contact/>
-                      
-                    </form>
-                    <div className={style.logo}>
-                            <FaFacebook size={40} />
-                            <FaSquareInstagram size={40} />
-                            <FaTelegram size={40} />
+                        <button type="submit">{isLoading ? "..." : "Send"}</button>
+                        <Contact />
+                        <p data-aos="fade-up">office@seyyam.net</p>
+                        <div  className={style.logo}>
+                            <img src={intagram} alt="" />
+                            <img src={telegram} alt="" />
+                            <img src={facebook} alt="" />
                         </div>
+                    </form>
                 </div>
-
             </div>
         </div>
     )

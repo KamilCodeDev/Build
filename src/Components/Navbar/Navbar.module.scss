@@ -2,11 +2,11 @@
 
 .back {
   background-color: rgba(30, 45, 59);
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .navbar {
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 90px;
-  background-color: rgba(30, 45, 59);
+  background-color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   // body {
@@ -38,7 +38,7 @@
 
 .logo {
   width: 70px;
-  height: 80px;
+  height: 110px;
 }
 
 .nav {
@@ -76,6 +76,11 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 10px;
+  img{
+    width: 30px;
+    height: 30px;
+    background: none;
+  }
 
 }
 .phoneLink{

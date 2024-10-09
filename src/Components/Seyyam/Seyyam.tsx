@@ -4,10 +4,18 @@ import Slider from "react-slick";
 import { ISeyyam, useSeyyam } from "./hook/useSeyyam";
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";  // Иконки стрелок
-
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const SimpleSlider = () => {
-  const { i18n } = useTranslation();  
+  const { i18n } = useTranslation();
   const sliderRef = useRef(null);  // Ссылка на слайдер для управления с помощью кнопок
+  useEffect(() => {
+    Aos.init({
+      duration: 500,
+      easing: 'ease-in-out',
+    });
+  }, []);
 
   const settings = {
     dots: false,
@@ -67,29 +75,33 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div className={style.container_seyyam}>
-      <div id="Seyyam">
-        <div className={style.sliderContainer}>
-          <Slider ref={sliderRef} {...settings}>
-            {seyyam?.map((seyyamItem) => (
-              <div className={style.container} key={seyyamItem.id}>
-                <div className={style.slider}>
-                  <div className={style.card}>
-                    <h1>{renderTitle(seyyamItem)}</h1>  
-                    <p>{renderDescription(seyyamItem)}</p>  
-                  </div>
-                  <img src={seyyamItem.img} alt="" />
-                </div>
-              </div>
-            ))}
-          </Slider>
+    <div data-aos="fade-up" >
 
-          <button className={style.prevButton} onClick={prevSlide}>
-            <FaArrowLeft />
-          </button>
-          <button className={style.nextButton} onClick={nextSlide}>
-            <FaArrowRight />
-          </button>
+
+      <div className={style.container_seyyam}>
+        <div id="Seyyam">
+          <div className={style.sliderContainer}>
+            <Slider ref={sliderRef} {...settings}>
+              {seyyam?.map((seyyamItem) => (
+                <div className={style.container} key={seyyamItem.id}>
+                  <div className={style.slider}>
+                    <div className={style.card}>
+                      <h1>{renderTitle(seyyamItem)}</h1>
+                      <p>{renderDescription(seyyamItem)}</p>
+                    </div>
+                    <img src={seyyamItem.img} alt="" />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+
+            <button className={style.prevButton} onClick={prevSlide}>
+              <FaArrowLeft />
+            </button>
+            <button className={style.nextButton} onClick={nextSlide}>
+              <FaArrowRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>

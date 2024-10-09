@@ -1,9 +1,21 @@
 import styles from './Service.module.scss'
 import { useTranslation } from 'react-i18next';  // Добавляем useTranslation для перевода
 import { useService, ISevice } from "./hook/useService";
-
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import { useEffect } from "react";
+import Serv from './Serv';
 
 const Service = () => {
+
+
+    useEffect(() => {
+        Aos.init({
+            duration: 500,
+            easing: 'ease-in-out',
+        });
+    }, []);
+
     // Вызов useService должен находиться внутри компонента
     const { data: service } = useService();
     const { i18n } = useTranslation();  // Подключаем хук useTranslation
@@ -35,19 +47,29 @@ const Service = () => {
     };
 
     return (
-        <div id='Service'>
-            <div className={styles.service}>
-                <h1>{i18n.t('services')}</h1>  {/* Перевод заголовка "Услуги" */}
-                <div className={styles.container}>
-                    {service?.map((serviceItem) => (
-                        <div key={serviceItem.id} className={styles.card}>
-                            <img className={styles.img} src={serviceItem.img} alt="" />
-                            <div className={styles.text}>
-                                <h1>{renderTitle(serviceItem)}</h1>  {/* Отображение заголовка услуги */}
-                                <p>{renderDescription(serviceItem)}</p>  {/* Отображение описания услуги */}
-                            </div>
+        <div data-aos="fade-up">
+            <div >
+                <Serv/>
+                <div>
+
+
+                    <div className={styles.service}>
+                        <h1>{i18n.t('services')}</h1> {/* Перевод заголовка "Услуги" */}
+                        <div className={styles.container}>
+
+                            {service?.map((serviceItem) => (
+                                <div key={serviceItem.id} className={styles.card}>
+                                    <img className={styles.img} src={serviceItem.img} alt="" />
+                                    <div className={styles.text}>
+
+                                        <h1>{renderTitle(serviceItem)}</h1>
+                                        {/* Отображение заголовка услуги */}
+                                        <p>{renderDescription(serviceItem)}</p>  {/* Отображение описания услуги */}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </div>

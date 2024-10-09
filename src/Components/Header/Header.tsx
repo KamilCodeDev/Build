@@ -4,19 +4,21 @@ import video1 from '../../assets/video1.mp4';
 import { useEffect } from "react";
 import { IHeader, useHeader } from "./hook/useHeader";
 import { useTranslation } from 'react-i18next';
+import img1 from "../../assets/img1.png";  // Логотип
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const Header = () => {
-    
     const { i18n } = useTranslation();
-
-    // Функция для обновления текущего времени каждую секунду
+    
     useEffect(() => {
-        const timer = setInterval(() => {
-       
-        }, 1000);
-
-        return () => clearInterval(timer); // Очистка интервала при размонтировании компонента
+        Aos.init({
+            duration: 500,
+            easing: 'ease-in-out',
+        });
     }, []);
+
+    const { data: header = [] } = useHeader();  // По умолчанию пустой массив
 
     const handleVideoError = () => {
         console.error("Ошибка загрузки видео.");
@@ -29,43 +31,40 @@ const Header = () => {
         }
     };
 
-    const { data: header } = useHeader();
-    console.log(header);
-
-    const renderTitle = (header: IHeader) => {
+    const renderTitle = (headerItem: IHeader) => {
         switch (i18n.language) {
-          case 'ru':
-            return header.title_ru;
-          case 'uz':
-            return header.title_uz;
-          case 'en':
-          default:
-            return header.title_en;
+            case 'ru':
+                return headerItem.title_ru;
+            case 'uz':
+                return headerItem.title_uz;
+            case 'en':
+            default:
+                return headerItem.title_en;
         }
     };
 
     return (
-        <div id='Header'>
+        <div data-aos="fade-up" id='Header'>
+            <div className={styles.header}>
+                <video className={styles.video} autoPlay loop muted playsInline onError={handleVideoError}>
+                    <source src={video1} type="video/mp4" />
+                </video>
 
-       
-        <div className={styles.header}>
-            <video className={styles.video} autoPlay loop muted playsInline onError={handleVideoError}>
-                <source src={video1} type="video/mp4" />
-            </video>
-            <div className={styles.text}>
-                <div>
-                    {header?.map((header) => (
-                        <div key={header.id}>
-                            <h1 className={styles.title}>{renderTitle(header)}</h1>
-                        </div>
-                    ))}
+                {/* Логотип в верхнем левом углу */}
+                <div className={styles.logoWrapper}>
+                </div>
 
-                 
-
-                    <SlArrowDown color="white" size={90} onClick={scrollToSection} style={{ cursor: "pointer" }} />
+                <div className={styles.text}>
+                    <div>
+                        {header.map((headerItem) => (
+                            <div key={headerItem.id}>
+                                <h1 className={styles.title}>{renderTitle(headerItem)}</h1>
+                            </div>
+                        ))}
+                        <SlArrowDown color="white" size={90} onClick={scrollToSection} style={{ cursor: "pointer" }} />
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 };

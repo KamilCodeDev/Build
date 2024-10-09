@@ -3,7 +3,7 @@ import style from "./Navbar.module.scss";
 import img1 from "../../Assets/img1.png";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { IoIosPhonePortrait } from "react-icons/io";
+import { BsTelephoneInbound } from "react-icons/bs";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,9 +50,8 @@ const Navbar = () => {
           <div className={style.clock}>
             {formattedTime}
           </div>
-          <img className={style.logo} src={img1} alt="logo" />
         </div>
-
+        <img src={img1} alt="Логотип" className={style.logo} />
         <nav className={`${style.nav} ${isMenuOpen ? style.activeMenu : ""}`}>
           <ul onClick={() => smoothScrollTo("Header")} className={style.active}>
             <a>{t("home")}</a>
@@ -66,13 +65,13 @@ const Navbar = () => {
           <ul onClick={() => smoothScrollTo("Project")} className={style.active}>
             <a>{t("projects")}</a>
           </ul>
-          <ul onClick={() => smoothScrollTo("Fotter")} className={style.active}>
+          <ul onClick={() => smoothScrollTo("Contact")} className={style.active}>
             <a>{t("contacts")}</a>
           </ul>
         </nav>
 
         <div className={style.phone}>
-          <IoIosPhonePortrait color="white" size="30px" />
+        <BsTelephoneInbound  color="white" size="25px" />
           <a className={style.phoneLink} href="tel:+998909876543">+998 90 987 65 43</a>
         </div>
 
