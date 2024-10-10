@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-
 .back {
   background-color: rgba(30, 45, 59);
   position:fixed;
@@ -25,7 +23,6 @@
 
 .clock {
   font-size: 24px;
-  font-family: "Playfair Display", serif;
   font-weight: bold;
   color: white;
   margin-right: 20px;
@@ -45,7 +42,6 @@
 .nav {
   display: flex;
   gap: 30px;
-  font-family: "Playfair Display", serif;
   font-weight: 300;
   font-size: 22px;
   color: white;
@@ -67,7 +63,6 @@ nav ul {
 .nav ul a {
   text-decoration: none;
   color: white;
-  font-family: "Playfair Display", serif;
   font-weight: 300;
   font-size: 22px;
   transition: color 0.3s ease;
@@ -95,7 +90,6 @@ font-size: 18px;
 
   h1 {
     color: white;
-    font-family: "Lora", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30px;
