@@ -2,7 +2,10 @@
 import { useContact } from "./hook/useContact";
 import styles from "./Contact.module.scss";
 import { BsTelephoneInbound } from "react-icons/bs";
-
+import telegram from "../../assets/telegram.png"
+import intagram from "../../assets/instagram.png"
+import facebook from "../../assets/facebook (2).png"
+import { MdOutlineMailOutline } from "react-icons/md";
 
 
 const Contact = () => {
@@ -10,24 +13,38 @@ const Contact = () => {
   console.log(contact);
 
   return (
-      <div id="Contact" data-aos="fade-up" className={styles.wrapper}>
-        <h1>Контакты </h1>
-          <div className={styles.contactCard}>
-              {contact?.map((contact) => (
-                  <div key={contact.id} className={styles.contactWrapper}>
-                    <BsTelephoneInbound />
-                      <a href={`tel:${contact.first_contact}`} className={styles.contactItem}>
-                          {contact.first_contact}
-                      </a>
-                      <span className={styles.separator}> | </span>
-                      <BsTelephoneInbound />
-                      <a href={`tel:${contact.second_contact}`} className={styles.contactItem}>
-                          {contact.second_contact}
-                      </a>
-                  </div>
-              ))}
+    <div id="Contact" data-aos="fade-up" className={styles.wrapper}>
+      <h1>Контакты </h1>
+      <div className={styles.contactCard}>
+        {contact?.map((contact) => (
+          <div key={contact.id} className={styles.contactWrapper}>
+            <div>
+              <BsTelephoneInbound />
+              <a href={`tel:${contact.first_contact}`} className={styles.contactItem}>
+                {contact.first_contact}
+              </a>
+            </div>
+            <div>
+              <BsTelephoneInbound />
+              <a href={`tel:${contact.second_contact}`} className={styles.contactItem}>
+                {contact.second_contact}
+              </a>
+            </div>
           </div>
+        ))}
+        <div className={styles.info}>
+          <div className={styles.email}>
+            <MdOutlineMailOutline size={30} />
+            <p >office@seyyam.net</p>
+          </div>
+          <div className={styles.logo}>
+            <img src={intagram} alt="" />
+            <img src={telegram} alt="" />
+            <img src={facebook} alt="" />
+          </div>
+        </div>
       </div>
+    </div>
   );
 }
 
