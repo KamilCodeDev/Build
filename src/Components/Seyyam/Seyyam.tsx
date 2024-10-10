@@ -81,7 +81,7 @@ const SimpleSlider = () => {
       <div className={style.container_seyyam}>
         <div id="Seyyam">
           <div className={style.sliderContainer}>
-            <Slider ref={sliderRef} {...settings}>
+            <Slider ref={sliderRef} {...settings} data-aos-duration='5000'>
               {seyyam?.map((seyyamItem) => (
                 <div className={style.container} key={seyyamItem.id}>
                   <div className={style.slider}>
