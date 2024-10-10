@@ -65,6 +65,9 @@ const Navbar = () => {
           <ul onClick={() => smoothScrollTo("Project")} className={style.active}>
             <a>{t("projects")}</a>
           </ul>
+          <ul onClick={() => smoothScrollTo("Collection")} className={style.active}>
+            <a>{t("gallery")}</a>
+          </ul>
           <ul onClick={() => smoothScrollTo("Contact")} className={style.active}>
             <a>{t("contacts")}</a>
           </ul>

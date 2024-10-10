@@ -6,15 +6,17 @@ import telegram from "../../assets/telegram.png"
 import intagram from "../../assets/instagram.png"
 import facebook from "../../assets/facebook (2).png"
 import { MdOutlineMailOutline } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 
 const Contact = () => {
   const { data: contact } = useContact();
+  const { t } = useTranslation();
   console.log(contact);
 
   return (
     <div id="Contact" data-aos="fade-up" className={styles.wrapper}>
-      <h1>Контакты </h1>
+      <h1>{t('contacts')}</h1>
       <div className={styles.contactCard}>
         {contact?.map((contact) => (
           <div key={contact.id} className={styles.contactWrapper}>
@@ -34,7 +36,7 @@ const Contact = () => {
         ))}
         <div className={styles.info}>
           <div className={styles.email}>
-            <MdOutlineMailOutline size={30} />
+            <MdOutlineMailOutline size={34} />
             <p >office@seyyam.net</p>
           </div>
           <div className={styles.logo}>
