@@ -1,8 +1,8 @@
 .text {
-    font-family: "Playfair Display", serif;
-    font-style: normal;
-    font-size: 28px;
+
+    font-size: 22px;
     color: white;
+    text-align: center;
 }
 
 .card {
@@ -14,15 +14,33 @@
     gap: 50px;
     padding: 120px 0px;
 
-    h1 {
+    .title2 {
         color: white;
+        font-family: "Playfair Display", serif;
         font-weight: weight(900);
         font-style: normal;
+        font-size: 27px;
+    }
+
+    .title3 {
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-weight: weight(900);
+        font-style: normal;
+        font-size: 27px;
+    }
+
+    h1 {
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-weight: weight(900);
+        font-style: normal;
+        font-size: 27px;
     }
 
     img {
-        width: 180px;
-        height: 170px;
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -31,6 +49,7 @@
     display: flex;
     align-items: start;
     justify-content: space-around;
+    padding: 70px;
 
 
     @media screen and (width < 768px) {

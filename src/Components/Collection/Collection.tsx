@@ -12,7 +12,7 @@ export default function SimpleGallery() {
   return (
     <div data-aos="fade-up" id="Collection" className={style.wrapper} style={{ padding: '140px' }}>
       <div className={style.container} style={{ textAlign: 'center' }}>
-        <h1 >{t("Наши коллекции ")}</h1>
+        <h1 >{t("галерея")}</h1>
 
         {/* Flexbox для фотографий */}
         <div className={style.gallery} >

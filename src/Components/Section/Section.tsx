@@ -27,13 +27,15 @@ const Section = () => {
                 </div> 
                 <div className={style.card}>
                     <img src={img25} alt="" />
-                    <h1>{t('title')}</h1> {/* Перевод заголовка второй карточки */}
-                    <p className={style.text}>{t('section')}</p> {/* Перевод текста второй карточки */}
+                    
+                    <h1 className={style.title2}>{t('title2')}</h1> {/* Перевод заголовка второй карточки */}
+                    <p className={style.text}>{t('section2')}</p>{/* Перевод текста второй карточки */}
                 </div> 
                 <div className={style.card}>
                     <img src={img26} alt="" />
-                    <h1>{t('title')}</h1> {/* Перевод заголовка третьей карточки */}
-                    <p className={style.text}>{t('section')}</p> {/* Перевод текста третьей карточки */}
+                    
+                    <h1 className={style.title3}>{t('title3')}</h1> {/* Перевод заголовка третьей карточки */}
+                    <p className={style.text}>{t('section3')}</p> {/* Перевод текста третьей карточки */}
                 </div> 
             </div>
         </div>

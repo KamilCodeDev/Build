@@ -13,7 +13,7 @@ const App = () => {
       <Navbar />
       <Header />
       <Section />
-       <Service />
+       <Service/>
       <Seyyam/>
       <Galery/>
       <Collection/>
