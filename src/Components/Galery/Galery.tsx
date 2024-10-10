@@ -12,6 +12,7 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl"; // Иконки дл
 import Gal from "./Gal";
 
 const Gallery = () => {
+    //@ts-ignore
     const { i18n, t } = useTranslation();
     const { data: galery } = useGalery();
 

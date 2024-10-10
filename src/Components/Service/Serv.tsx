@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from "./Service.module.scss"
 const Serv = () => {
   return (

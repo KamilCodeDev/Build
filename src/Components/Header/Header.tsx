@@ -4,7 +4,6 @@ import video1 from '../../assets/video1.mp4';
 import { useEffect } from "react";
 import { IHeader, useHeader } from "./hook/useHeader";
 import { useTranslation } from 'react-i18next';
-import img1 from "../../assets/img1.png";  // Логотип
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
