@@ -54,7 +54,7 @@ const Service = () => {
 
 
                     <div className={styles.service}>
-                        <h1>{i18n.t('services')}</h1> {/* Перевод заголовка "Услуги" */}
+                        <h1 className={styles.heading}>{i18n.t('services')}</h1> {/* Перевод заголовка "Услуги" */}
                         <div className={styles.container}>
 
                             {service?.map((serviceItem) => (

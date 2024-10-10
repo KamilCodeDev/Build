@@ -6,6 +6,7 @@
 }
 .container{
     max-width: 1400px;
+    width: 95%;
     margin: 0 auto;
     margin-top: 80px;
     
@@ -21,7 +22,6 @@
     
 
     p{
-      font-weight: 500;
       font-size: 20px;
     }
 
@@ -60,9 +60,11 @@
         border: none;
         background-color: #edcd1f;
         color: black;
-        font-size: 25px;
+        font-size: 20px;
         border-radius: 10px;
         transition-duration: 0.4s;
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
     }
     button:hover{
         background-color: black;

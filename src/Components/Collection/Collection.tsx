@@ -10,7 +10,7 @@ export default function SimpleGallery() {
   
 
   return (
-    <div data-aos="fade-up" id="Collection" className={style.wrapper} style={{ padding: '140px' }}>
+    <div id="Collection" className={style.wrapper}>
       <div className={style.container} style={{ textAlign: 'center' }}>
         <h1 >{t("gallery")}</h1>
 
@@ -22,7 +22,6 @@ export default function SimpleGallery() {
                 className={style.img}
                 src={collectionItem.img}
                 alt={collectionItem.title}
-                style={{ width: '400px', borderRadius: '4px' }} // Используйте 100% ширины для адаптации
               />
             </div>
           ))}
