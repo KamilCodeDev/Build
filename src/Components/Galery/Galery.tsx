@@ -63,7 +63,7 @@ const Gallery = () => {
     };
 
     return (
-        <div data-aos="fade-up"  >
+        <div >
             <div className={style.galleryContainer}>
                 <Gal/>
             <h2 >{i18n.t("projects")}</h2>

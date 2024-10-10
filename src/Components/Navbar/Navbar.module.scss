@@ -25,6 +25,7 @@
 
 .clock {
   font-size: 24px;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   color: white;
   margin-right: 20px;
@@ -44,7 +45,7 @@
 .nav {
   display: flex;
   gap: 30px;
-  font-family: "Lora", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 300;
   font-size: 22px;
   color: white;
@@ -66,7 +67,7 @@ nav ul {
 .nav ul a {
   text-decoration: none;
   color: white;
-  font-family: "Lora", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 300;
   font-size: 22px;
   transition: color 0.3s ease;

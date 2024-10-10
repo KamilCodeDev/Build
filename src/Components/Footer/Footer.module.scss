@@ -18,10 +18,12 @@
     height: fit-content;
     display: grid;
     gap: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Playfair Display", serif;
     
 
     p{
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
       font-size: 20px;
     }
 
@@ -49,7 +51,7 @@
         textarea {
             height: 86px;
             resize: none;
-            font-family: 'Roboto', sans-serif;
+            
             padding-top: 10px;
         }
     }
