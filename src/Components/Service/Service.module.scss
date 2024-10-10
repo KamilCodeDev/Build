@@ -1,14 +1,11 @@
 .service {
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
     text-align: center;
-    margin-top: 50px;
     margin-bottom: 80px;
     background: url("../../assets/img19.jpg") no-repeat center center/cover;
     height: 100vh;
 
     h1 {
         color: black;
-        font-family: "Playfair Display", serif;
         font-weight: 500;
         font-style: normal;
         font-size: 30px;
@@ -30,7 +27,6 @@
         margin-bottom: 15px;
     }
     p{
-        font-family: "Playfair Display", serif;
         font-weight: 500;
         line-height: 1.6em;
         font-weight: 500;

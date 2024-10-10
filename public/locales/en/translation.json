@@ -9,6 +9,11 @@
   "section2": " The office is located in an area with developed infrastructure, which makes its location especially attractive. Shops, cafes, banks and other necessary facilities are within walking distance. This location is not only convenient for employees, but also creates a positive image of the company.",
   "title2": "Developed infrastructure    ",
   "section3": " The office is located in an exceptionally convenient location, providing easy access for employees and clients. Due to the proximity to major transport hubs such as the metro and bus stops, getting to the office is easy.",
-  "title3": "Convenient location    "
-  
+  "title3": "Convenient location",
+  "gallery": "Gallery",
+  "form": {
+    "name": "Name",
+    "contact": "Contact",
+    "send": "Send"
+  }
 }
