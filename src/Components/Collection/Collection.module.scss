@@ -9,7 +9,9 @@
 }
 
 .container {
+  max-width: 1200px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .gallery {
@@ -30,7 +32,8 @@
 
 .img {
   width: 100%; // Заполнение родительского блока
-  height: 250px; 
+  height: 100%;
+  max-height: 400px; 
   object-fit: cover;
   transition: transform 0.5s;// Сохранение пропорций
 }

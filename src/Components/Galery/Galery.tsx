@@ -1,90 +1,73 @@
-import { useTranslation } from "react-i18next";
-import style from "./Galery.module.scss";
-import { useGalery, IGalery } from "./hook/useGalery";
+import style from './Galery.module.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-// Импортируем стили slick-carousel
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
-// Импортируем сам слайдер
-import Slider from "react-slick";
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl"; // Иконки для кастомных стрелок
-import Gal from "./Gal";
+import { useGalery, IGalery } from './hook/useGalery';
 
 const Gallery = () => {
-    //@ts-ignore
-    const { i18n, t } = useTranslation();
-    const { data: galery } = useGalery();
+  const { i18n, t } = useTranslation();
+  const { data: galery } = useGalery();
 
-    // Кастомные кнопки навигации
-    const PreviousBtn = (props: any) => {
-        const { onClick } = props;
-        return (
-            <div className={style.prevButton} onClick={onClick}>
-                <SlArrowLeft size={30} />
-            </div>
-        );
-    };
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
-    const NextBtn = (props: any) => {
-        const { onClick } = props;
-        return (
-            <div className={style.nextButton} onClick={onClick}>
-                <SlArrowRight size={30} />
-            </div>
-        );
-    };
+  // Функция для отображения заголовка галереи в зависимости от текущего языка
+  const renderTitle = (galeryItem: IGalery) => {
+    switch (i18n.language) {
+      case 'ru':
+        return galeryItem.title_ru;
+      case 'uz':
+        return galeryItem.title_uz;
+      case 'en':
+      default:
+        return galeryItem.title_en;
+    }
+  };
 
-    // Настройки для слайдера
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1.2,
-        slidesToScroll: 1,
-        prevArrow: <PreviousBtn />,
-        nextArrow: <NextBtn />,
-        autoplay: true,
-        centerMode: true,
-        centerPadding: "100px",
-    };
-
-    // Функция для отображения заголовка галереи в зависимости от текущего языка
-    const renderTitle = (galeryItem: IGalery) => {
-        switch (i18n.language) {
-            case 'ru':
-                return galeryItem.title_ru;
-            case 'uz':
-                return galeryItem.title_uz;
-            case 'en':
-            default:
-                return galeryItem.title_en;
-        }
-    };
-
-    return (
-        <div >
-            <div className={style.galleryContainer}>
-                <Gal/>
-            <h2 >{i18n.t("projects")}</h2>
-                <Slider {...settings}>
-                    {galery?.map((galeryItem) => (
-                        <div data-aos="fade-up" key={galeryItem.id} className={style.slideItem}>
-                            <div className={style.imageWrapper} style={{ marginRight: "20px", position: "relative" }}>
-                                <img src={galeryItem.img} alt="" className={style.image} style={{ borderRadius: '5px' }} />
-                                <div className={style.overlay}>
-                                    <h1 className={style.overlayTitle} >
-                                        {renderTitle(galeryItem)}
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </Slider>
-            </div>
+  return (
+    <section id='Project' className={style.section}>
+      <div className={style.container}>
+        <h2>{t('projects')}</h2>
+        <Swiper
+          spaceBetween={40}
+          loop={true}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          modules={[Autoplay, Navigation]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1.3,
+            },
+          }}
+          className={style.swiper}
+        >
+          {galery?.map((item) => (
+            <SwiperSlide key={item.id} className={style.item}>
+              <img src={item.img} alt='' />
+              <b>{renderTitle(item)}</b>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className={style.nav}>
+          <button ref={prevRef}>
+            <FaArrowLeft size={20} />
+          </button>
+          <button ref={nextRef}>
+            <FaArrowRight size={20} />
+          </button>
         </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Gallery;
-

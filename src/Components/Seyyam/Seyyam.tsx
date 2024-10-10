@@ -23,7 +23,7 @@ const SimpleSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     arrows: false,  // Отключаем стандартные стрелки
     responsive: [
@@ -81,24 +81,26 @@ const SimpleSlider = () => {
       <div className={style.container_seyyam}>
         <div id="Seyyam">
           <div className={style.sliderContainer}>
-            <Slider ref={sliderRef} {...settings} data-aos-duration='5000'>
+            <Slider ref={sliderRef} {...settings}>
               {seyyam?.map((seyyamItem) => (
-                <div className={style.container} key={seyyamItem.id}>
+                <div className={style.container} key={seyyamItem.id} data-aos="fade-up" data-aos-delay="1000">
                   <div className={style.slider}>
                     <div className={style.card}>
                       <h1>{renderTitle(seyyamItem)}</h1>
                       <p>{renderDescription(seyyamItem)}</p>
                     </div>
-                    <img src={seyyamItem.img} alt="" />
+                    <div className={style.image}>
+                      <img src={seyyamItem.img} alt="" />
+                    </div>
                   </div>
                 </div>
               ))}
             </Slider>
 
-            <button className={style.prevButton} onClick={prevSlide}>
+            <button className={style.prevButton} onClick={prevSlide} data-aos="fade-up" data-aos-delay="1000">
               <FaArrowLeft />
             </button>
-            <button className={style.nextButton} onClick={nextSlide}>
+            <button className={style.nextButton} onClick={nextSlide} data-aos="fade-up" data-aos-delay="1000">
               <FaArrowRight />
             </button>
           </div>

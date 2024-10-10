@@ -62,7 +62,7 @@ const Service = () => {
                                     <img className={styles.img} src={serviceItem.img} alt="" />
                                     <div className={styles.text}>
 
-                                        <h1>{renderTitle(serviceItem)}</h1>
+                                        <h2>{renderTitle(serviceItem)}</h2>
                                         {/* Отображение заголовка услуги */}
                                         <p>{renderDescription(serviceItem)}</p>  {/* Отображение описания услуги */}
                                     </div>

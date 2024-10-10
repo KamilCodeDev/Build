@@ -3,7 +3,7 @@ import style from "./Navbar.module.scss";
 import img1 from "../../Assets/img1.png";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { BsTelephoneInbound } from "react-icons/bs";
+import { PiPhoneCall } from "react-icons/pi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,15 +33,19 @@ const Navbar = () => {
     second: '2-digit'
   });
 
-  // Функция для плавного скролла
-  const smoothScrollTo = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); // Закрываем меню после выбора
+  const smoothScrollTo = (sectionId: string, offset: number = 150) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
-
+  
   return (
     <div className={style.back}>
 
@@ -74,8 +78,8 @@ const Navbar = () => {
         </nav>
 
         <div className={style.phone}>
-        <BsTelephoneInbound  color="white" size="25px" />
-          <a className={style.phoneLink} href="tel:+998909876543">+998 90 987 65 43</a>
+        <PiPhoneCall color="white" size={30} />
+          <a className={style.phoneLink} href="tel:+998954433000">+998 95 443 30 00</a>
         </div>
 
         <select
