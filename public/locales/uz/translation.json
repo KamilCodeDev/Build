@@ -12,6 +12,7 @@
   "title3": "Qulay joylashuv",
   "gallery": "Galereya",
   "form": {
+    "heading": "Bizga xabar yuboring",
     "name": "Ism",
     "contact": "Aloqa ma'lumotlari",
     "send": "Jo'natish"

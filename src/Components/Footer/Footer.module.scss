@@ -1,120 +1,122 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 4rem 0;
 }
-.container{
-    max-width: 1400px;
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 80px;
-    
+.container {
+  max-width: 1400px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 80px;
 }
 
-
+.heading {
+  font-size: clamp(1.625rem, 1.528rem + 0.4vw, 1.875rem);
+}
 
 .form {
-    width: 100%;
-    height: fit-content;
-    display: grid;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: 20px;
+
+  p {
+    font-size: 20px;
+  }
+
+  .row {
+    display: flex;
     gap: 20px;
-    
+  }
 
-    p{
-      font-size: 20px;
+  label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+
+    input,
+    textarea {
+      width: 100%;
+      height: 70px;
+      border: 2px solid black;
+      padding-left: 10px;
+      border-radius: 15px;
+      font-size: 23px;
     }
 
-    .row {
-        display: flex;
-        gap: 20px;
-    }
+    textarea {
+      height: 86px;
+      resize: none;
 
-    label {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-size: 14px;
+      padding-top: 10px;
+    }
+  }
 
-        input, textarea {
-            width: 100%;
-            height: 70px;
-            border: 2px solid black;
-            padding-left: 10px;
-            border-radius: 15px;
-            font-size: 23px;
-        }
-
-        textarea {
-            height: 86px;
-            resize: none;
-            
-            padding-top: 10px;
-        }
-    }
-    
-    button {
-        height: 55px;
-        cursor: pointer;
-        border: none;
-        background-color: #edcd1f;
-        color: black;
-        font-size: 20px;
-        border-radius: 10px;
-        transition-duration: 0.4s;
-        font-family: 'Playfair Display', serif;
-        font-weight: bold;
-    }
-    button:hover{
-        background-color: black;
-        color: white;
-        transition: 0.5s;
-    }
+  button {
+    height: 55px;
+    cursor: pointer;
+    border: none;
+    background-color: #edcd1f;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+  }
 }
 
 @media (max-width: 768px) {
-    .footer {
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+
+  .form {
+    .row {
       flex-direction: column;
     }
-  
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+/* Адаптивные стили для экранов до 480px */
+@media (max-width: 480px) {
+  .footer {
     iframe {
-      height: 200px;
+      height: 180px;
+      width: 100%;
     }
-  
+
     .form {
-      .row {
-        flex-direction: column;
+      padding: 15px;
+
+      label {
+        font-size: 14px;
       }
-  
+
+      textarea {
+        min-height: 80px;
+      }
+
       button {
-        width: 100%;
+        padding: 8px;
       }
     }
   }
-  
-  /* Адаптивные стили для экранов до 480px */
-  @media (max-width: 480px) {
-    .footer {
-      iframe {
-        height: 180px;
-        width: 100%;
-      }
-  
-      .form {
-        padding: 15px;
-  
-        label {
-          font-size: 14px;
-        }
-  
-        textarea {
-          min-height: 80px;
-        }
-  
-        button {
-          padding: 8px;
-        }
-      }
-    }
-  }
+}

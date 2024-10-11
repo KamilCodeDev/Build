@@ -12,6 +12,7 @@
   "title3": "Convenient location",
   "gallery": "Gallery",
   "form": {
+    "heading": "Send us a message",
     "name": "Name",
     "contact": "Contact",
     "send": "Send"
