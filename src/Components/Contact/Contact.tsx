@@ -1,7 +1,7 @@
 import { useContact } from './hook/useContact';
 import styles from './Contact.module.scss';
-import { PiPhoneCall } from 'react-icons/pi';
-import { MdOutlineMailOutline } from 'react-icons/md';
+// import { PiPhoneCall } from 'react-icons/pi';
+// import { MdOutlineMailOutline } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import Telegram from "../../assets/telegram.png"
 import instagram from "../../assets/instagram.png"
