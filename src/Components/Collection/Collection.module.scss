@@ -1,11 +1,12 @@
 .section {
   background-image: url('../../assets/img28.jpg');
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   text-align: center;
   padding: 50px 0 100px 0;
+  height: 100vh;
 
   .container {
     max-width: 1400px;
