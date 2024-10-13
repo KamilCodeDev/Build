@@ -33,7 +33,7 @@ const Contact = () => {
         <div className={styles.info}>
           <div className={styles.email}>
             <img src={email} style={{ width: '30px', height: '30px' }} alt="" />
-            <p>office@seyyam.net</p>
+            <a href='mailto:office@seyyam.net'>office@seyyam.net</a>
           </div>
           <div className={styles.logo}>
             <a href='https://www.instagram.com/seyyam__group/' target='_blank'>

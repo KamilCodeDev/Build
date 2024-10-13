@@ -1,9 +1,6 @@
-.sliderContainer {
+.img_container{
   width: 100%;
-  background-image: url('../../assets/img27.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('../../assets/img27.jpg') no-repeat center center/cover;
   background-attachment: fixed;
 }
 
