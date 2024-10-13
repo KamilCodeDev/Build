@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 import { useGalery, IGalery } from './hook/useGalery';
