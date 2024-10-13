@@ -19,3 +19,8 @@ body{
 h1, h2, h3, h4, h5, h6, b, strong, label, cite, kbd, th {
     font-family: 'Playfair Display', serif;
 }
+
+#Project .swiper-slide {
+    height: unset;
+    min-height: 100%;
+}

@@ -38,7 +38,7 @@ const Gallery = () => {
           spaceBetween={40}
           loop={true}
           navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-          modules={[Autoplay, Navigation]}
+          modules={[Navigation]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
             0: {
