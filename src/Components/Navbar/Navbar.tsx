@@ -3,7 +3,7 @@ import style from "./Navbar.module.scss";
 import img1 from "../../Assets/img1.png";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { PiPhoneCall } from "react-icons/pi";
+import { BsTelephone } from "react-icons/bs";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +78,9 @@ const Navbar = () => {
         </nav>
 
         <div className={style.phone}>
-        <PiPhoneCall color="white" size={30} />
+        {/* <PiPhoneCall color="white" size={30} /> */}
+        {/* <FiPhone color="white" size={30} /> */}
+        <BsTelephone color="white" size={30}/>
           <a className={style.phoneLink} href="tel:+998954433000">+998 95 443 30 00</a>
         </div>
 
