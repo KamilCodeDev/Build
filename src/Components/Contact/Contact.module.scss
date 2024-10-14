@@ -15,6 +15,10 @@
 //     width: 100%; /* Занимает всю ширину родительского контейнера */
 // }
 
+.contactCard{
+  text-align: start;
+}
+
 .contactWrapper {
   display: flex;
   flex-direction: column;
@@ -49,8 +53,8 @@
 .email {
   display: flex;
   align-items: center;
-  margin-left: 4px;
   gap: 10px;
+  margin: 0 0 10px 3px;
 }
 .contactItem {
   color: black;
