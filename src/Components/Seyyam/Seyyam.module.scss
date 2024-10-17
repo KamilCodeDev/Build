@@ -4,6 +4,7 @@
 
   background: url('../../assets/img27.jpg') no-repeat center center/cover;
   background-attachment: fixed;
+  min-height: 50vh;
 }
 
 .container {
@@ -111,6 +112,12 @@
 }
 
 @media (max-width: 768px) {
+  .img_container{
+    width: 100%;
+    background: black;
+    background-attachment: fixed;
+    min-height: 50vh;
+  }
   .slider {
     gap: 0;
     border-radius: 0px;

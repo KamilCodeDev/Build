@@ -1,14 +1,15 @@
-import style from './Galery.module.scss';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import style from "./Galery.module.scss";
+import "swiper/css";
+import "swiper/css/navigation";
 
-import { useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-import { useGalery, IGalery } from './hook/useGalery';
+
+import { useGalery, IGalery } from "./hook/useGalery";
 
 const Gallery = () => {
   const { i18n, t } = useTranslation();
@@ -17,23 +18,22 @@ const Gallery = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
-  // Функция для отображения заголовка галереи в зависимости от текущего языка
   const renderTitle = (galeryItem: IGalery) => {
     switch (i18n.language) {
-      case 'ru':
+      case "ru":
         return galeryItem.title_ru;
-      case 'uz':
+      case "uz":
         return galeryItem.title_uz;
-      case 'en':
+      case "en":
       default:
         return galeryItem.title_en;
     }
   };
 
   return (
-    <section id='Project' className={style.section}>
+    <section id="Project" className={style.section}>
       <div className={style.container}>
-        <h2>{t('projects')}</h2>
+        <h2>{t("projects")}</h2>
         <Swiper
           spaceBetween={40}
           loop={true}
@@ -52,7 +52,7 @@ const Gallery = () => {
         >
           {galery?.map((item) => (
             <SwiperSlide key={item.id} className={style.item}>
-              <img src={item.img} alt='' />
+              <img src={item.img} alt="" />
               <b>{renderTitle(item)}</b>
             </SwiperSlide>
           ))}
