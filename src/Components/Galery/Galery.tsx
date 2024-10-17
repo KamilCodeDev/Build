@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
+
 import { useGalery, IGalery } from "./hook/useGalery";
 
 const Gallery = () => {
