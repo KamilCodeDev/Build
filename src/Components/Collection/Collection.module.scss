@@ -40,6 +40,13 @@
 }
 
 @media (max-width: 768px) {
+  .section{
+    background: black;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    background-size: cover;
+  }
   .section .container .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
