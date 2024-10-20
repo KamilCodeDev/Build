@@ -8,7 +8,6 @@ import { FaInstagram } from "react-icons/fa6";
 import facebook from "../../assets/facebook (2).png";
 import email from "../../assets/email (2).png";
 import call from "../../assets/calling.png";
-import instagram from "../../assets/video.png";
 const Contact = () => {
   const { data: contact } = useContact();
   const { t } = useTranslation();
