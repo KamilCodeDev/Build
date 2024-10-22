@@ -60,9 +60,9 @@ const Footer = () => {
                 <input type='text' id='name' name='name' required />
               </label>
             </div>
-            <label htmlFor='number'>
+            <label htmlFor='phone'>
               <h2>{t('form.contact')}</h2>
-              <input type='number' id='number' name='number' required />
+              <input type='tel' id='phone' name='phone' required />
             </label>
             <button type='submit'>{isLoading ? '...' : t('form.send')}</button>
           </form>
